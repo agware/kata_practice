@@ -6,6 +6,12 @@ virtualenv venv
 source venv/bin/activate
 ```
 
+* Install and setup pre-commit
+```
+pip install pre-commit
+pre-commit install
+```
+
 * Install requirements
 ```
 pip install -r requirements.txt
