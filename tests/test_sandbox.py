@@ -9,8 +9,9 @@ from .context import kata_practice
         (5, 10),
         (-2, 100),
         (99999, 11),
-    )
+        (-999, -7777),
+    ),
 )
-def test_add(first_number: int, second_number: int):
+def test_add(first_number: int, second_number: int) -> None:
     result = kata_practice.add(first_number, second_number)
     assert result == first_number + second_number
