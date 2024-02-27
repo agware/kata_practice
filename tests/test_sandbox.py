@@ -1,5 +1,6 @@
 import pytest
-import kata_practice
+
+from .context import kata_practice
 
 
 @pytest.mark.parametrize(
