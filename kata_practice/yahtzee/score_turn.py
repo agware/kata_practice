@@ -5,7 +5,22 @@ from kata_practice.yahtzee.score_categories import ScoreCategoriesEnum
 
 
 def has_straight(rolls: list[int], target: int) -> bool:
-    return True
+    rolls.sort()
+
+    prev_value = None
+    current_straight = 0
+    for die_value in rolls:
+        if prev_value is not None and prev_value + 1 < die_value:
+            # break in the chain has occurred
+            current_straight = 0
+        else:
+            current_straight += 1
+            if current_straight >= target:
+                return True
+
+        prev_value = die_value
+
+    return False
 
 
 def score_small_straight(rolls: list[int]) -> int:

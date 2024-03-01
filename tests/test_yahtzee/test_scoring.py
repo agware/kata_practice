@@ -14,6 +14,16 @@ def test_all_score_categories_return_a_value(category: ScoreCategoriesEnum):
 
 
 @pytest.mark.parametrize(
+    "category",
+    (ScoreCategoriesEnum.THREE_OF_A_KIND, ScoreCategoriesEnum.FOUR_OF_A_KIND, ScoreCategoriesEnum.FIVE_OF_A_KIND, 50),
+)
+def test_score_turn_with_any_of_a_kind_no_match(category: ScoreCategoriesEnum):
+    dice_rolls = [1, 2, 3, 4, 5]
+    result = score_turn(dice_rolls, category)
+    assert result == 0
+
+
+@pytest.mark.parametrize(
     ("category", "expected"),
     (
         (ScoreCategoriesEnum.THREE_OF_A_KIND, 15),
@@ -50,7 +60,29 @@ def test_score_any_of_a_kind_with_default():
     assert result == default_score
 
 
-@pytest.mark.xfail(reason="Logic not implemented yet")
+@pytest.mark.parametrize(
+    "category",
+    (ScoreCategoriesEnum.SMALL_STRAIGHT, ScoreCategoriesEnum.LARGE_STRAIGHT),
+)
+def test_score_turn_with_straight_no_match(category: ScoreCategoriesEnum):
+    dice_rolls = [1, 1, 1, 1, 1]
+    result = score_turn(dice_rolls, category)
+    assert result == 0
+
+
+@pytest.mark.parametrize(
+    ("category", "expected"),
+    (
+        (ScoreCategoriesEnum.SMALL_STRAIGHT, 30),
+        (ScoreCategoriesEnum.LARGE_STRAIGHT, 40),
+    ),
+)
+def test_score_turn_with_straight(category: ScoreCategoriesEnum, expected: int):
+    dice_rolls = [1, 2, 3, 4, 5]
+    result = score_turn(dice_rolls, category)
+    assert result == expected
+
+
 @pytest.mark.parametrize(
     ("rolls", "target", "expected"),
     (
