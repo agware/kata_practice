@@ -1,11 +1,7 @@
 import pytest
 
 from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
-from kata_practice.yahtzee.scoring.score_category_combos import (
-    COMBO_SCORE_CATEGORIES,
-    score_any_combination,
-    score_any_combination_category,
-)
+from kata_practice.yahtzee.scoring.score_category_combos import score_any_combination, score_any_combination_category
 
 
 def test_score_any_combination_raises_error():
@@ -13,7 +9,17 @@ def test_score_any_combination_raises_error():
         score_any_combination_category(ScoreCategoriesEnum.THREE_OF_A_KIND, [])
 
 
-@pytest.mark.parametrize("category", COMBO_SCORE_CATEGORIES)
+@pytest.mark.parametrize(
+    "category",
+    (
+        ScoreCategoriesEnum.ACES,
+        ScoreCategoriesEnum.TWOS,
+        ScoreCategoriesEnum.THREES,
+        ScoreCategoriesEnum.FOURS,
+        ScoreCategoriesEnum.FIVES,
+        ScoreCategoriesEnum.SIXES,
+    ),
+)
 def test_score_any_combination_no_match_with_category(category: ScoreCategoriesEnum):
     dice_rolls = [7, 7, 7, 7, 7]
     result = score_any_combination_category(category, dice_rolls)

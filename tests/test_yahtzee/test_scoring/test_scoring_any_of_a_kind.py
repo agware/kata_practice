@@ -1,11 +1,7 @@
 import pytest
 
 from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
-from kata_practice.yahtzee.scoring.score_category_any_of_a_kind import (
-    ANY_OF_A_KIND_SCORE_CATEGORY,
-    score_any_of_a_kind,
-    score_any_of_a_kind_category,
-)
+from kata_practice.yahtzee.scoring.score_category_any_of_a_kind import score_any_of_a_kind, score_any_of_a_kind_category
 
 
 def test_score_any_of_a_kind_raises_error():
@@ -13,7 +9,10 @@ def test_score_any_of_a_kind_raises_error():
         score_any_of_a_kind_category(ScoreCategoriesEnum.ACES, [])
 
 
-@pytest.mark.parametrize("category", ANY_OF_A_KIND_SCORE_CATEGORY)
+@pytest.mark.parametrize(
+    "category",
+    (ScoreCategoriesEnum.THREE_OF_A_KIND, ScoreCategoriesEnum.FOUR_OF_A_KIND, ScoreCategoriesEnum.FIVE_OF_A_KIND),
+)
 def test_score_any_of_a_kind_no_match_with_category(category: ScoreCategoriesEnum):
     dice_rolls = [1, 2, 3, 4, 5]
     result = score_any_of_a_kind_category(category, dice_rolls)

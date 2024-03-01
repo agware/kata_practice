@@ -1,7 +1,5 @@
 from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
 
-STRAIGHT_SCORE_CATEGORIES = {ScoreCategoriesEnum.SMALL_STRAIGHT, ScoreCategoriesEnum.LARGE_STRAIGHT}
-
 
 def has_straight(target: int, rolls: list[int]) -> bool:
     unique_rolls = list(set(rolls))
@@ -24,15 +22,15 @@ def has_straight(target: int, rolls: list[int]) -> bool:
 
 
 def score_any_straight_category(category: ScoreCategoriesEnum, rolls: list[int]) -> int:
-    if category not in STRAIGHT_SCORE_CATEGORIES:
-        raise ValueError(category)
-
     straight_target_map = {
         ScoreCategoriesEnum.SMALL_STRAIGHT: 4,
         ScoreCategoriesEnum.LARGE_STRAIGHT: 5,
     }
-    target = straight_target_map[category]
 
+    if category not in straight_target_map:
+        raise ValueError(category)
+
+    target = straight_target_map[category]
     if not has_straight(target, rolls):
         return 0
 

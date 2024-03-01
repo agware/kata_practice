@@ -1,11 +1,7 @@
 import pytest
 
 from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
-from kata_practice.yahtzee.scoring.score_category_straights import (
-    STRAIGHT_SCORE_CATEGORIES,
-    has_straight,
-    score_any_straight_category,
-)
+from kata_practice.yahtzee.scoring.score_category_straights import has_straight, score_any_straight_category
 
 
 def test_score_any_combination_raises_error():
@@ -13,7 +9,7 @@ def test_score_any_combination_raises_error():
         score_any_straight_category(ScoreCategoriesEnum.CHANCE, [])
 
 
-@pytest.mark.parametrize("category", STRAIGHT_SCORE_CATEGORIES)
+@pytest.mark.parametrize("category", (ScoreCategoriesEnum.SMALL_STRAIGHT, ScoreCategoriesEnum.LARGE_STRAIGHT))
 def test_score_turn_with_straight_no_match(category: ScoreCategoriesEnum):
     dice_rolls = [1, 1, 1, 1, 1]
     result = score_any_straight_category(category, dice_rolls)
