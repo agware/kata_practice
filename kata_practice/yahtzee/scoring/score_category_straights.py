@@ -1,5 +1,3 @@
-from collections import Counter
-
 from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
 
 STRAIGHT_SCORE_CATEGORIES = {ScoreCategoriesEnum.SMALL_STRAIGHT, ScoreCategoriesEnum.LARGE_STRAIGHT}
@@ -23,15 +21,6 @@ def has_straight(target: int, rolls: list[int]) -> bool:
         prev_value = die_value
 
     return False
-
-
-def score_any_straight(target: int, rolls: list[int]) -> int:
-    counted_rolls = Counter(rolls)
-
-    if target not in counted_rolls:
-        return 0
-
-    return target * counted_rolls[target]
 
 
 def score_any_straight_category(category: ScoreCategoriesEnum, rolls: list[int]) -> int:

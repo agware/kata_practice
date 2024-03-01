@@ -1,7 +1,14 @@
+from unittest.mock import Mock
+
 import pytest
 
 from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
 from kata_practice.yahtzee.scoring.score_turn import has_full_house, score_turn
+
+
+def test_score_turn_raises_error():
+    with pytest.raises(NotImplementedError):
+        score_turn(Mock(), [])
 
 
 @pytest.mark.parametrize("category", ScoreCategoriesEnum)
