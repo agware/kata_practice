@@ -1,7 +1,7 @@
 import pytest
 
-from kata_practice.yahtzee.score_categories import ScoreCategoriesEnum
-from kata_practice.yahtzee.score_turn import has_full_house, score_turn
+from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
+from kata_practice.yahtzee.scoring.score_turn import has_full_house, score_turn
 
 
 @pytest.mark.parametrize("category", ScoreCategoriesEnum)

@@ -1,12 +1,15 @@
 from collections import Counter
 
-from kata_practice.yahtzee.score_categories import ScoreCategoriesEnum
-from kata_practice.yahtzee.score_category_any_of_a_kind import (
+from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
+from kata_practice.yahtzee.scoring.score_category_any_of_a_kind import (
     ANY_OF_A_KIND_SCORE_CATEGORY,
     score_any_of_a_kind_category,
 )
-from kata_practice.yahtzee.score_category_combos import COMBO_SCORE_CATEGORIES, score_any_combination_category
-from kata_practice.yahtzee.score_category_straights import STRAIGHT_SCORE_CATEGORIES, score_any_straight_category
+from kata_practice.yahtzee.scoring.score_category_combos import COMBO_SCORE_CATEGORIES, score_any_combination_category
+from kata_practice.yahtzee.scoring.score_category_straights import (
+    STRAIGHT_SCORE_CATEGORIES,
+    score_any_straight_category,
+)
 
 
 def has_full_house(rolls: list[int]) -> bool:

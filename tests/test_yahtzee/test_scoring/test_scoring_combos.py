@@ -1,7 +1,7 @@
 import pytest
 
-from kata_practice.yahtzee.score_categories import ScoreCategoriesEnum
-from kata_practice.yahtzee.score_category_combos import (
+from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
+from kata_practice.yahtzee.scoring.score_category_combos import (
     COMBO_SCORE_CATEGORIES,
     score_any_combination,
     score_any_combination_category,

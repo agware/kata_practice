@@ -1,6 +1,6 @@
 from collections import Counter
 
-from kata_practice.yahtzee.score_categories import ScoreCategoriesEnum
+from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
 
 ANY_OF_A_KIND_SCORE_CATEGORY = {
     ScoreCategoriesEnum.THREE_OF_A_KIND,

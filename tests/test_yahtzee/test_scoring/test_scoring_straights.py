@@ -1,7 +1,7 @@
 import pytest
 
-from kata_practice.yahtzee.score_categories import ScoreCategoriesEnum
-from kata_practice.yahtzee.score_category_straights import (
+from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
+from kata_practice.yahtzee.scoring.score_category_straights import (
     STRAIGHT_SCORE_CATEGORIES,
     has_straight,
     score_any_straight_category,

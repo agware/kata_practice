@@ -1,7 +1,7 @@
 import pytest
 
-from kata_practice.yahtzee.score_categories import ScoreCategoriesEnum
-from kata_practice.yahtzee.score_category_any_of_a_kind import (
+from kata_practice.yahtzee.scoring.score_categories import ScoreCategoriesEnum
+from kata_practice.yahtzee.scoring.score_category_any_of_a_kind import (
     ANY_OF_A_KIND_SCORE_CATEGORY,
     score_any_of_a_kind,
     score_any_of_a_kind_category,
