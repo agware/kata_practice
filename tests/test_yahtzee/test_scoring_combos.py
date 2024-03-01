@@ -9,7 +9,7 @@ from kata_practice.yahtzee.score_category_combos import (
 
 
 def test_score_any_combination_raises_error():
-    with pytest.raises(NotImplementedError):
+    with pytest.raises(ValueError):
         score_any_combination_category(ScoreCategoriesEnum.THREE_OF_A_KIND, [])
 
 

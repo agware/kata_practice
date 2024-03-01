@@ -25,7 +25,7 @@ def score_any_of_a_kind(target: int, rolls: list[int]) -> int:
 
 def score_any_of_a_kind_category(category: ScoreCategoriesEnum, rolls: list[int]) -> int:
     if category not in ANY_OF_A_KIND_SCORE_CATEGORY:
-        raise NotImplementedError
+        raise ValueError(category)
 
     any_of_a_kind_target_map = {
         ScoreCategoriesEnum.THREE_OF_A_KIND: 3,

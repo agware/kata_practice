@@ -9,7 +9,7 @@ from kata_practice.yahtzee.score_category_any_of_a_kind import (
 
 
 def test_score_any_of_a_kind_raises_error():
-    with pytest.raises(NotImplementedError):
+    with pytest.raises(ValueError):
         score_any_of_a_kind_category(ScoreCategoriesEnum.ACES, [])
 
 

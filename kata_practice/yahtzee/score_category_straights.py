@@ -36,7 +36,7 @@ def score_any_straight(target: int, rolls: list[int]) -> int:
 
 def score_any_straight_category(category: ScoreCategoriesEnum, rolls: list[int]) -> int:
     if category not in STRAIGHT_SCORE_CATEGORIES:
-        raise NotImplementedError
+        raise ValueError(category)
 
     straight_target_map = {
         ScoreCategoriesEnum.SMALL_STRAIGHT: 4,

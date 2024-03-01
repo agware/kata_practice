@@ -23,7 +23,7 @@ def score_any_combination(target: int, rolls: list[int]) -> int:
 
 def score_any_combination_category(category: ScoreCategoriesEnum, rolls: list[int]) -> int:
     if category not in COMBO_SCORE_CATEGORIES:
-        raise NotImplementedError
+        raise ValueError(category)
 
     combo_target_map = {
         ScoreCategoriesEnum.ACES: 1,

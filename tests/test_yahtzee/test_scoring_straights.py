@@ -9,7 +9,7 @@ from kata_practice.yahtzee.score_category_straights import (
 
 
 def test_score_any_combination_raises_error():
-    with pytest.raises(NotImplementedError):
+    with pytest.raises(ValueError):
         score_any_straight_category(ScoreCategoriesEnum.CHANCE, [])
 
 
