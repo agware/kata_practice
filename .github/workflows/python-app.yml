@@ -30,4 +30,4 @@ jobs:
     - name: Test with pytest
       run: |
         pip install -r tests/requirements.txt
-        pytest tests/
+        pytest -v --cov=kata_practice tests/
